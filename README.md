@@ -2,6 +2,7 @@ Solrclj
 =======
 
 
+
 A clojure client for [Apache Solr](http://lucene.apache.org/solr/).
 
 [![Build Status](https://api.travis-ci.org/mlehman/solrclj.png)](http://api.travis-ci.org/mlehman/solrclj)
