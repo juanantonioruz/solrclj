@@ -1,6 +1,7 @@
 Solrclj
 =======
 
+
 A clojure client for [Apache Solr](http://lucene.apache.org/solr/).
 
 [![Build Status](https://api.travis-ci.org/mlehman/solrclj.png)](http://api.travis-ci.org/mlehman/solrclj)
@@ -13,24 +14,24 @@ Examples
     (use 'solrclj)
 
     ;; Http Solr Example
-    (def server (solr-server {:type :http 
+    (def server (solr-server {:type :http
                               :host "localhost"}))
 
     ;; Http Multi-core Solr Example
-    (def server (solr-server {:type :http 
+    (def server (solr-server {:type :http
                               :core "books"
                               :host "localhost"}))
 
     ;; Embedded Solr Example
-    (def server (solr-server {:type :embedded 
+    (def server (solr-server {:type :embedded
                              :core "mycore"
                              :dir "/home-path"}))
 
-### Querying 
+### Querying
 
 The first argument is the mandatory solr query parameter (q). Any additional solr parameters can be added using additional keyword arguments. Use a vector as the value to send multiple params. The query can use the [Solr Query Syntax](http://wiki.apache.org/solr/SolrQuerySyntax).
 
-    ;; Simple Query 
+    ;; Simple Query
     (query server "la mancha")
 
     ;; Query with Solr Query Syntax
@@ -53,14 +54,14 @@ The first argument is the mandatory solr query parameter (q). Any additional sol
  - :start - start index of documents
  - :rows - number of documents returned
  - :fq - filter query to restrict results - "language:en"
- - :fl - specify fields returned - "score, author, title" 
+ - :fl - specify fields returned - "score, author, title"
 
 ### Faceting Query Results
 
     ;; Faceting
     (query server "*:*" :rows 0 :facet true :facet.field :author)
 
-### Adding Documents 
+### Adding Documents
 
     ;; Adding a Document
     (add server {:title "Don Quixote" :author "Miguel de Cervantes" :summary "..." })
@@ -73,7 +74,7 @@ The first argument is the mandatory solr query parameter (q). Any additional sol
     ;; Delete
     (delete-by-query server "*:*")
 
-    ;; Commit 
+    ;; Commit
     (commit server)
 
 ### Core Administration
@@ -96,7 +97,7 @@ Getting
 
 Modify your [Leiningen](http://github.com/technomancy/leiningen) dependencies to include Solrclj:
 
-    :dependencies [[solrclj/solrclj "0.1.2"] ...] 
+    :dependencies [[solrclj/solrclj "0.1.2"] ...]
 
 
 References
